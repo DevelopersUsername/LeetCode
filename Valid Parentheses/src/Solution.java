@@ -11,7 +11,7 @@ public class Solution {
         map.put('{', '}');
         map.put('[', ']');
 
-        Stack<Character> stack = new Stack<Character>();
+        Stack<Character> stack = new Stack<>();
         for (char c : s.toCharArray()) {
 
             if (map.containsKey(c)) {
