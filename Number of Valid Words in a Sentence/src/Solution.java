@@ -1,0 +1,11 @@
+class Solution {
+    public int countValidWords(String sentence) {
+
+        int ans = 0;
+        for(String word: sentence.split("\\s+"))
+            if(word.matches("^([a-z]+(-?[a-z]+)?)?(!|\\.|,)?$") && word.matches("[^\\d]+"))
+                ans++;
+
+        return ans;
+    }
+}
