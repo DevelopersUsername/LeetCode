@@ -1,19 +1,16 @@
 class Solution {
     public int balancedStringSplit(String s) {
 
-        int ans = 0, lCount = 0, rCount = 0;
+        int ans = 0, count = 0;
         for (int i = 0; i < s.length(); i++) {
 
             if (s.charAt(i) == 'R')
-                rCount++;
-            else if (s.charAt(i) == 'L')
-                lCount++;
+                count++;
+            else
+                count--;
 
-            if (rCount == lCount) {
-                rCount = 0;
-                lCount = 0;
+            if (count == 0)
                 ans++;
-            }
         }
 
         return ans;
