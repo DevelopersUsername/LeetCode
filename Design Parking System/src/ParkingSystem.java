@@ -1,6 +1,6 @@
 class ParkingSystem {
 
-    private int[] space = new int[3];
+    private final int[] space = new int[3];
     public ParkingSystem(int big, int medium, int small) {
         this.space[0] = big;
         this.space[1] = medium;
