@@ -26,15 +26,12 @@ class Solution {
         else if (map.containsKey(n)) return map.get(n);
 
         List<TreeNode> ans = new ArrayList<>();
-        for (int leftCount = 0; leftCount < n; leftCount++) {
+        for (int l = 0; l < n; l++) {
 
-            int rightCount = n - leftCount - 1;
-            for (TreeNode left : allPossibleFBT(leftCount))
-                for (TreeNode right : allPossibleFBT(rightCount)) {
-                    ans.add(new TreeNode(0));
-                    ans.get(ans.size() - 1).left = left;
-                    ans.get(ans.size() - 1).right = right;
-                }
+            int r = n - l - 1;
+            for (TreeNode left : allPossibleFBT(l))
+                for (TreeNode right : allPossibleFBT(r))
+                    ans.add(new TreeNode(0, left, right));
         }
 
         map.put(n, ans);
