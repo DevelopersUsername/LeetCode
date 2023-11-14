@@ -27,10 +27,10 @@ class Solution {
 
         if (!isSymmetric) return;
         else if (rootLeft == null && rootRight == null) return;
-        else if (rootLeft == null || rootRight == null) {
+        else if (rootLeft == null || rootRight == null || rootLeft.val != rootRight.val) {
             isSymmetric = false;
             return;
-        } else if (rootLeft.val != rootRight.val) isSymmetric = false;
+        }
 
         dfs(rootLeft.left, rootRight.right);
         dfs(rootLeft.right, rootRight.left);
