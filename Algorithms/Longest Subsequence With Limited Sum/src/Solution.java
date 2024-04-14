@@ -1,0 +1,23 @@
+import java.util.Arrays;
+
+class Solution {
+    public int[] answerQueries(int[] nums, int[] queries) {
+
+        Arrays.sort(nums);
+        for (int i = 0; i < queries.length; i++)
+            queries[i] = elementsCount(nums, queries[i]);
+
+        return queries;
+    }
+
+    private int elementsCount(int[] nums, int query) {
+
+        int sum = 0;
+        for (int i = 0; i < nums.length; i++) {
+            sum += nums[i];
+            if (sum > query) return i;
+        }
+
+        return nums.length;
+    }
+}
