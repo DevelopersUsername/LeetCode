@@ -11,7 +11,7 @@ class Solution {
 
         for (String cpdomain : cpdomains) {
             int space = cpdomain.indexOf(' ');
-            int num = Integer.valueOf(cpdomain.substring(0, space));
+            int num = Integer.parseInt(cpdomain.substring(0, space));
             String domain = cpdomain.substring(space + 1);
             count.merge(domain, num, Integer::sum);
             for (int i = 0; i < domain.length(); i++)
